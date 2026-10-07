@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f0e7">
+  <title>Undangan Pernikahan — Yani & Deni</title>
+  <meta name="description" content="Undangan pernikahan Yani dan Deni. Dengan penuh rasa syukur, kami mengundang Anda untuk merayakan hari bahagia kami.">
+  <link rel="icon" type="image/png" href="images/yani-deni-icon.png">
+  <link rel="apple-touch-icon" href="images/yani-deni-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Sacramento&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f5f0e7;
+      --paper: #fbf8f2;
+      --olive: #5c6249;
+      --deep: #33392e;
+      --terracotta: #a7654f;
+      --sand: #d9cbb6;
+      --muted: #79776b;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+      --script: "Sacramento", cursive;
+    }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html { scroll-behavior: smooth; background: var(--cream); }
+    body { position: relative; isolation: isolate; margin: 0; background: transparent; color: var(--deep); font-family: var(--sans); font-size: 15px; line-height: 1.75; }
+    body::before { content: ""; position: fixed; z-index: -1; inset: 0; background: url("images/undangan-backdrop.webp") center center / cover no-repeat; pointer-events: none; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    img { display: block; max-width: 100%; }
+    .eyebrow { font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--terracotta); }
+    .serif { font-family: var(--serif); }
+    .script { font-family: var(--script); font-weight: 400; }
+    .section { padding: 105px 24px; }
+    .section-inner { max-width: 1040px; margin: auto; }
+    .center { text-align: center; }
+    .section-title { font: 400 clamp(34px, 5vw, 54px)/1.15 var(--serif); margin: 9px 0 18px; color: var(--deep); }
+    .section-intro { max-width: 540px; margin: 0 auto; color: var(--muted); }
+    .divider { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 22px auto; color: var(--terracotta); }
+    .divider::before, .divider::after { content: ""; width: 42px; height: 1px; background: var(--sand); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid rgba(92,98,73,.34); border-radius: 999px; background: linear-gradient(145deg, rgba(255,255,255,.78), rgba(255,255,255,.44)); color: var(--deep); padding: 12px 21px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; -webkit-backdrop-filter: blur(14px) saturate(160%); backdrop-filter: blur(14px) saturate(160%); box-shadow: inset 0 1px 1px rgba(255,255,255,.82), inset 0 -1px 1px rgba(255,255,255,.24), 0 7px 22px rgba(48,43,32,.12); transition: background .25s ease, box-shadow .25s ease, transform .25s ease, color .25s ease; }
+    .btn:hover { background: linear-gradient(145deg, rgba(255,255,255,.92), rgba(255,255,255,.6)); color: var(--deep); box-shadow: inset 0 1px 1px rgba(255,255,255,.94), 0 10px 26px rgba(48,43,32,.17); transform: translateY(-1px); }
+    .btn:active { transform: scale(.98); }
+    .btn:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; }
+    .btn-outline { background: rgba(255,255,255,.28); color: var(--olive); border-color: rgba(92,98,73,.4); }
+    .btn-outline:hover { background: rgba(255,255,255,.62); color: var(--olive); }
+    /* Cover */
+    .cover { min-height: 100svh; position: relative; display: grid; place-items: center; padding: 34px 20px; overflow: hidden; color: white; text-align: center; background: #62584b url("images/yani-deni-cover.jpg") center 48%/cover no-repeat; }
+    .cover::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(34,37,30,.30), rgba(34,37,30,.51) 45%, rgba(34,37,30,.68)); }
+    .cover::after { content: ""; position: absolute; inset: 16px; border: 1px solid rgba(255,255,255,.42); pointer-events: none; }
+    .cover-content { position: relative; z-index: 1; max-width: 650px; animation: rise .9s ease both; }
+    .cover .eyebrow { color: #e3d3bd; }
+    .cover h1 { margin: 10px 0 7px; font: 400 clamp(48px, 10vw, 92px)/1.05 var(--serif); letter-spacing: -.035em; }
+    .cover .amp { font: 400 55px var(--script); color: #e5c5a6; }
+    .cover-date { margin: 18px 0 30px; font-size: 11px; letter-spacing: .28em; text-transform: uppercase; }
+    .cover .btn { border: 1px solid rgba(255,255,255,.68); border-radius: 999px; padding: 13px 25px; background: linear-gradient(145deg, rgba(255,255,255,.34), rgba(255,255,255,.12)); color: white; -webkit-backdrop-filter: blur(16px) saturate(170%); backdrop-filter: blur(16px) saturate(170%); box-shadow: inset 0 1px 1px rgba(255,255,255,.62), inset 0 -1px 1px rgba(255,255,255,.12), 0 9px 28px rgba(22,20,16,.25); text-shadow: 0 1px 5px rgba(0,0,0,.25); transition: background .25s ease, box-shadow .25s ease, transform .25s ease; }
+    .cover .btn:hover { background: linear-gradient(145deg, rgba(255,255,255,.46), rgba(255,255,255,.2)); color: white; box-shadow: inset 0 1px 1px rgba(255,255,255,.76), 0 12px 32px rgba(22,20,16,.3); transform: translateY(-1px); }
+    .cover .btn:active { transform: scale(.98); }
+    @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) { .cover .btn { background: rgba(245,240,231,.92); color: var(--deep); text-shadow: none; } }
+    .cover-note { font-size: 12px; color: rgba(255,255,255,.78); margin: 0 0 20px; }
+    .cover-floral { position: absolute; z-index: 1; width: clamp(150px, 23vw, 285px); height: auto; opacity: .78; pointer-events: none; }
+    .cover-floral-start { top: 0; left: 0; }
+    .cover-floral-end { right: 0; bottom: 0; }
+    .cover-floral-end, .floral-corner-end { transform: rotate(180deg); }
+    .scroll-hint { position: absolute; z-index: 1; bottom: 34px; left: 50%; transform: translateX(-50%); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.8); }
+    .scroll-hint::after { content: ""; display: block; height: 28px; width: 1px; margin: 7px auto 0; background: rgba(255,255,255,.65); }
+    .is-locked { overflow: hidden; }
+    .video-screen { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; overflow-y: auto; padding: 28px 18px; background: #24271f; color: white; text-align: center; }
+    .video-screen[hidden] { display: none !important; }
+    .video-inner { width: min(100%, 880px); }
+    .video-screen .eyebrow { color: #dfc4ac; }
+    .video-screen h2 { font: 400 clamp(30px, 5vw, 46px)/1.2 var(--serif); margin: 8px 0 20px; }
+    .video-screen video { display: block; width: 100%; max-height: 70vh; margin: 0 auto; background: #10110e; }
+    #invitation-video:fullscreen, #invitation-video:-webkit-full-screen { width: 100vw; height: 100vh; max-height: none; object-fit: contain; background: #000; }
+    .video-screen .btn { margin-top: 20px; background: linear-gradient(145deg, rgba(255,255,255,.32), rgba(255,255,255,.12)); color: white; border-color: rgba(255,255,255,.62); box-shadow: inset 0 1px 1px rgba(255,255,255,.55), 0 8px 24px rgba(0,0,0,.22); }
+    .video-screen .btn:hover { background: linear-gradient(145deg, rgba(255,255,255,.46), rgba(255,255,255,.2)); color: white; }
+    .video-status { min-height: 24px; margin: 9px 0 0; color: rgba(255,255,255,.72); font-size: 12px; }
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 10; background: rgba(251,248,242,.88); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(92,98,73,.12); }
+    .nav-inner { max-width: 1120px; padding: 0 24px; margin: auto; min-height: 62px; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font: 400 26px var(--script); color: var(--olive); white-space: nowrap; }
+    .nav-links { display: flex; gap: 27px; align-items: center; }
+    .nav-links a { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #646457; }
+    .nav-links a:hover { color: var(--terracotta); }
+    .menu-toggle { display: none; border: 0; background: none; color: var(--deep); font-size: 22px; padding: 8px; cursor: pointer; }
+    /* Intro */
+    .intro { position: relative; isolation: isolate; overflow: hidden; background: rgba(251,248,242,.88); }
+    .intro .section-inner { position: relative; z-index: 1; }
+    .floral-corner { position: absolute; z-index: 0; width: min(27vw, 300px); height: auto; opacity: .2; pointer-events: none; }
+    .floral-corner-start { top: 0; left: 0; }
+    .floral-corner-end { right: 0; bottom: 0; }
+    .leaf-garland { width: min(190px, 48vw); height: auto; margin: -6px auto 4px; opacity: .3; mix-blend-mode: multiply; }
+    .intro-copy { max-width: 740px; margin: 0 auto; text-align: center; }
+    .intro-copy blockquote { font: italic 400 clamp(18px, 2.5vw, 23px)/1.7 var(--serif); color: #5e6252; margin: 28px auto; }
+    .couple { display: grid; grid-template-columns: 1fr 80px 1fr; align-items: center; gap: 24px; max-width: 770px; margin: 55px auto 0; }
+    .person { text-align: center; }
+    .portrait-frame { position: relative; isolation: isolate; width: min(320px, 100%); aspect-ratio: 906 / 1024; margin: 0 auto 18px; }
+    .portrait { position: absolute; left: 23.1%; top: 24%; width: 52.2%; height: 57%; object-fit: cover; filter: saturate(.88); }
+    .portrait-frame-art { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: fill; pointer-events: none; }
+    .person:first-child .portrait { object-position: center 18%; }
+    .person:last-child .portrait { object-position: center 14%; }
+    .person h3 { font: 400 31px var(--serif); margin: 0 0 3px; }
+    .person p { color: var(--muted); font-size: 12px; margin: 0; }
+    .couple-heart { font: 34px var(--script); color: var(--terracotta); }
+    /* Story */
+    .story { position: relative; isolation: isolate; overflow: hidden; background: rgba(233,228,216,.86); }
+    .story .section-inner { position: relative; z-index: 1; }
+    .story-corner { position: absolute; z-index: 0; width: min(235px, 22vw); height: auto; opacity: .1; pointer-events: none; }
+    .story-corner-top { top: 0; right: 0; transform: scaleX(-1); }
+    .story-corner-bottom { bottom: 0; left: 0; transform: scaleY(-1); }
+    .story-floral { width: min(340px, 76vw); height: auto; margin: 12px auto 0; opacity: .84; }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 14px; }
+    .story-photo { width: 100%; height: 480px; object-fit: cover; object-position: center 28%; filter: saturate(.82); }
+    .story-copy { border-left: 1px solid #c7b9a2; padding: 10px 0 10px 30px; }
+    .story-item { margin: 0 0 28px; }
+    .story-item:last-child { margin-bottom: 0; }
+    .story-item .year { color: var(--terracotta); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
+    .story-item h3 { font: 400 24px var(--serif); margin: 2px 0 6px; }
+    .story-item p { margin: 0; color: var(--muted); font-size: 13px; }
+    /* Event */
+    .event { position: relative; isolation: isolate; overflow: hidden; background: rgba(92,98,73,.88); color: white; }
+    .event .section-inner { position: relative; z-index: 1; }
+    .event .eyebrow { color: #d7b59d; }
+    .event .section-title { color: white; }
+    .event .section-intro { color: rgba(255,255,255,.72); }
+    .event .divider::before, .event .divider::after { background: rgba(255,255,255,.25); }
+    .event-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 810px; margin: 48px auto 0; }
+    .event-card { padding: 34px 28px; border: 1px solid rgba(255,255,255,.25); text-align: center; }
+    .event-icon { font-size: 21px; color: #dfc4ac; }
+    .event-card h3 { font: 400 28px var(--serif); margin: 10px 0 12px; }
+    .event-card p { color: rgba(255,255,255,.76); margin: 3px 0; font-size: 13px; }
+    .event-card .time { font: 17px var(--serif); color: #ead6c0; margin: 13px 0; }
+    .event-card .btn { margin-top: 17px; color: white; border-color: rgba(255,255,255,.58); background: linear-gradient(145deg, rgba(255,255,255,.2), rgba(255,255,255,.08)); box-shadow: inset 0 1px 1px rgba(255,255,255,.48), 0 7px 20px rgba(25,29,20,.18); }
+    .event-card .btn:hover { background: linear-gradient(145deg, rgba(255,255,255,.36), rgba(255,255,255,.16)); color: white; }
+    .countdown { display: flex; justify-content: center; gap: 26px; margin: 47px 0 0; }
+    .countdown div { min-width: 62px; }
+    .countdown strong { display: block; font: 400 34px var(--serif); }
+    .countdown span { color: rgba(255,255,255,.65); font-size: 9px; letter-spacing: .15em; text-transform: uppercase; }
+    /* Gallery */
+    .gallery { background: rgba(251,248,242,.88); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 220px; gap: 12px; margin-top: 42px; }
+    .gallery-grid img { width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 2px; filter: saturate(.82); cursor: zoom-in; transition: filter .3s, transform .3s; }
+    .gallery-grid img:hover { filter: saturate(1); transform: scale(1.015); }
+    .gallery-grid img:nth-child(3n + 1) { grid-row: span 2; }
+    /* Wedding gift and guestbook */
+    .wedding-gift { background: rgba(233,228,216,.86); }
+    .gift-card { max-width: 520px; margin: 38px auto 0; padding: 34px 24px; background: var(--paper); border: 1px solid #ded5c7; text-align: center; }
+    .gift-card .bank-label { color: var(--terracotta); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
+    .gift-card h3 { font: 400 26px var(--serif); margin: 6px 0; }
+    .gift-card .account-number { font: 400 clamp(22px, 5vw, 30px) var(--serif); letter-spacing: .08em; margin: 16px 0 4px; }
+    .gift-card .account-holder { color: var(--muted); font-size: 13px; margin: 0; }
+    .guestbook { background: rgba(251,248,242,.88); }
+    .guestbook-form { max-width: 650px; margin: 35px auto 0; padding: 30px; background: #f2eee5; border: 1px solid #ded5c7; }
+    .message-list { max-width: 650px; margin: 28px auto 0; }
+    .message-card { padding: 18px 20px; margin-bottom: 12px; background: #f2eee5; border-left: 2px solid var(--terracotta); }
+    .message-card h3 { font: 400 19px var(--serif); margin: 0 0 5px; }
+    .message-card p { margin: 0; color: #656457; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .message-card time { display: block; margin-top: 8px; color: #8a8578; font-size: 10px; }
+    .empty-messages { text-align: center; color: var(--muted); font-size: 13px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #777366; }
+    .field input, .field select, .field textarea { width: 100%; padding: 11px 12px; background: #fffefa; border: 1px solid #d9d2c5; color: var(--deep); outline: none; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--olive); }
+    .field textarea { min-height: 86px; resize: vertical; }
+    .guestbook .btn { margin-top: 20px; }
+    .form-note { font-size: 11px; color: var(--muted); margin: 13px 0 0; }
+    /* Closing */
+    .closing { position: relative; isolation: isolate; min-height: 520px; display: grid; place-items: center; padding: 70px 24px; text-align: center; color: white; background: rgba(43,45,36,.54); }
+    .closing::before { content: ""; position: absolute; z-index: 0; inset: 0; background: linear-gradient(rgba(43,45,36,.36),rgba(43,45,36,.42)), url("images/yani-deni-picnic-selfie.jpg") center/cover; opacity: 1; pointer-events: none; }
+    .closing > div { position: relative; z-index: 1; }
+    .closing .script { font-size: clamp(42px, 8vw, 70px); color: #ead1b8; }
+    .closing p { max-width: 570px; margin: 15px auto; color: rgba(255,255,255,.84); }
+    .closing .eyebrow { color: #e4c5a8; }
+    footer { background: var(--deep); color: rgba(255,255,255,.66); text-align: center; padding: 25px 20px; font-size: 11px; }
+    footer .script { color: #e4c5a8; font-size: 24px; }
+    .starfield { position: fixed; z-index: 4; inset: 0; overflow: hidden; pointer-events: none; }
+    .star-particle { position: absolute; line-height: 1; user-select: none; opacity: .12; text-shadow: 0 0 9px currentColor; animation: twinkle ease-in-out infinite; }
+    @keyframes twinkle { 0%, 100% { opacity: .12; transform: scale(.7) rotate(0deg); } 50% { opacity: .72; transform: scale(1.15) rotate(24deg); } }
+    @media (prefers-reduced-motion: reduce) { .star-particle { animation: none; opacity: .35; } }
+    .lightbox { position: fixed; z-index: 30; inset: 0; display: none; place-items: center; padding: 25px; background: rgba(24,26,21,.92); }
+    .lightbox.open { display: grid; }
+    .lightbox img { max-height: 88vh; max-width: 92vw; object-fit: contain; }
+    .lightbox-close { position: absolute; right: 22px; top: 12px; color: white; border: 0; background: none; font-size: 35px; cursor: pointer; }
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 700px) {
+      .section { padding: 78px 20px; }
+      body::before { background-size: auto 100%; background-position: center center; }
+      .cover-floral { width: min(34vw, 190px); opacity: .72; }
+      .floral-corner { width: min(39vw, 210px); opacity: .16; }
+      .leaf-garland { width: min(165px, 46vw); }
+      .nav-inner { min-height: 56px; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 56px; left: 0; right: 0; padding: 16px 24px 20px; background: var(--paper); border-bottom: 1px solid var(--sand); flex-direction: column; align-items: flex-start; gap: 13px; }
+      .nav-links.open { display: flex; }
+      .couple { grid-template-columns: 1fr; gap: 16px; margin-top: 38px; }
+      .couple-heart { line-height: 1; }
+      .person h3 { font-size: 25px; }
+      .story-corner { width: min(150px, 34vw); opacity: .08; }
+      .story-floral { width: min(265px, 76vw); margin-top: 10px; }
+      .story-grid { grid-template-columns: 1fr; gap: 30px; margin-top: 12px; }
+      .story-photo { height: 330px; }
+      .story-copy { padding-left: 22px; }
+      .event-grid { grid-template-columns: 1fr; margin-top: 34px; }
+      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 180px; gap: 8px; }
+      .gallery-grid img:nth-child(3n + 1) { grid-row: auto; }
+      .guestbook-form { padding: 23px 18px; }
+    }
+    @media (max-width: 430px) {
+      .cover::after { inset: 10px; }
+      .couple { gap: 12px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .countdown { gap: 13px; }
+      .countdown div { min-width: 56px; }
+      .countdown strong { font-size: 29px; }
+    }
+    @media (max-width: 700px) and (orientation: landscape) {
+      body::before { background-size: cover; background-position: center 52%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="cover" id="home">
+    <img class="cover-floral cover-floral-start" src="images/floral-corner-yani.webp" alt="" aria-hidden="true" fetchpriority="high">
+    <img class="cover-floral cover-floral-end" src="images/floral-corner-yani.webp" alt="" aria-hidden="true" fetchpriority="high">
+    <div class="cover-content">
+      <p class="eyebrow">The Wedding of</p>
+      <h1>Yani <span class="amp">&</span> Deni</h1>
+      <p class="cover-date">Kamis, 13 Mei 2027</p>
+      <p class="cover-note">Kepada Yth.<br><span id="guest-name">Bapak/Ibu/Saudara/i</span></p>
+      <button class="btn" id="open-invitation" type="button">Buka Undangan <span aria-hidden="true">↓</span></button>
+    </div>
+  </header>
+
+  <section class="video-screen" id="video-screen" hidden aria-label="Video pembuka undangan">
+    <div class="video-inner">
+      <p class="eyebrow">Yani & Deni</p>
+      <h2>Video Undangan</h2>
+      <video id="invitation-video" controls preload="metadata">
+        <source src="video-undangan.mp4" type="video/mp4">
+        Browser Anda belum mendukung pemutaran video.
+      </video>
+      <p class="video-status" id="video-status" aria-live="polite">Di ponsel video akan diputar layar penuh. Tonton sampai selesai untuk membuka isi undangan.</p>
+      <button class="btn" id="enter-invitation" type="button" hidden>Masuk ke Isi Undangan <span aria-hidden="true">↓</span></button>
+    </div>
+  </section>
+
+  <nav class="nav" hidden aria-label="Navigasi utama">
+    <div class="nav-inner">
+      <a class="brand" href="#home">Y <span>&</span> D</a>
+      <button class="menu-toggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="#salam">Salam</a><a href="#kisah">Kisah Kami</a><a href="#acara">Acara</a><a href="#galeri">Galeri</a><a href="#gift">Wedding Gift</a><a href="#ucapan">Ucapan</a>
+      </div>
+    </div>
+  </nav>
+
+  <main hidden>
+    <section class="section intro" id="salam">
+      <img class="floral-corner floral-corner-start" src="images/floral-corner-yani.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img class="floral-corner floral-corner-end" src="images/floral-corner-yani.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="section-inner">
+        <div class="intro-copy">
+          <p class="eyebrow">Assalamu’alaikum Warahmatullahi Wabarakatuh</p>
+          <h2 class="section-title">Dengan penuh rasa syukur</h2>
+          <div class="divider">✳</div>
+          <img class="leaf-garland" src="images/floral-leaves.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <blockquote>“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram di sampingnya.”</blockquote>
+          <p class="section-intro">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami.</p>
+        </div>
+        <div class="couple">
+          <article class="person">
+            <div class="portrait-frame">
+              <img class="portrait" src="images/yani-deni-yani.jpg" alt="Potret mempelai wanita, Yani" loading="lazy">
+              <img class="portrait-frame-art" src="images/bingkai-mempelai.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            </div>
+            <h3>Yani</h3>
+            <p>Putri kedua dari<br>Bapak Tarsidi & Ibu Awati</p>
+          </article>
+          <span class="couple-heart" aria-hidden="true">&</span>
+          <article class="person">
+            <div class="portrait-frame">
+              <img class="portrait" src="images/yani-deni-deni.jpg" alt="Potret mempelai pria, Deni" loading="lazy">
+              <img class="portrait-frame-art" src="images/bingkai-mempelai.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            </div>
+            <h3>Deni</h3>
+            <p>Putra kedua dari<br>Bapak Tapsir (Alm) & Ibu Anidah (Alm)</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story" id="kisah">
+      <img class="story-corner story-corner-top" src="images/floral-corner-yani.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img class="story-corner story-corner-bottom" src="images/floral-corner-yani.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="section-inner">
+        <div class="center">
+          <p class="eyebrow">A little story</p>
+          <h2 class="section-title">Kisah Kami</h2>
+          <p class="section-intro">Dua perjalanan yang akhirnya bertemu, lalu memilih untuk berjalan berdampingan.</p>
+        </div>
+        <img class="story-floral" src="images/kisah-floral-divider.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <div class="story-grid">
+          <img class="story-photo" src="images/yani-deni-garden-1.jpg" alt="Yani dan Deni menghabiskan waktu bersama di taman" loading="lazy">
+          <div class="story-copy">
+            <article class="story-item"><span class="year">2019 · Pertemuan</span><h3>Berawal dari sapaan</h3><p>Kami bertemu tanpa sengaja di sebuah acara teman. Obrolan ringan hari itu menjadi awal dari banyak cerita.</p></article>
+            <article class="story-item"><span class="year">2022 · Bertumbuh</span><h3>Belajar saling mengenal</h3><p>Hari demi hari, kami belajar merayakan perbedaan dan tumbuh menjadi versi terbaik bersama.</p></article>
+            <article class="story-item"><span class="year">2027 · Selamanya</span><h3>Memilih satu tujuan</h3><p>Dengan restu keluarga, kami memutuskan untuk mengikat janji dan memulai babak baru.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section event" id="acara">
+      <div class="section-inner">
+        <div class="center">
+          <p class="eyebrow">Save the date</p>
+          <h2 class="section-title">Hari Bahagia Kami</h2>
+          <p class="section-intro">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Anda berkenan hadir dan memberikan doa restu.</p>
+        </div>
+        <div class="event-grid">
+          <article class="event-card">
+            <div class="event-icon" aria-hidden="true">✧</div>
+            <h3>Akad Nikah</h3>
+            <p class="time">08.00 – 10.00 WIB</p>
+            <p>Kamis, 13 Mei 2027</p><p>Rumah Mempelai Wanita</p>
+            <p>Desa Kutakembara</p>
+            <a class="btn" href="https://maps.app.goo.gl/gctBo1sTLWLdMzZ47" target="_blank" rel="noreferrer">Lihat Lokasi ↗</a>
+          </article>
+          <article class="event-card">
+            <div class="event-icon" aria-hidden="true">✧</div>
+            <h3>Resepsi</h3>
+            <p class="time">11.00 – 14.00 WIB</p>
+            <p>Kamis, 13 Mei 2027</p><p>Rumah Mempelai Wanita</p>
+            <p>Desa Kutakembara</p>
+            <a class="btn" href="https://maps.app.goo.gl/gctBo1sTLWLdMzZ47" target="_blank" rel="noreferrer">Lihat Lokasi ↗</a>
+          </article>
+        </div>
+        <div class="countdown" aria-label="Hitung mundur menuju hari pernikahan">
+          <div><strong id="days">00</strong><span>Hari</span></div><div><strong id="hours">00</strong><span>Jam</span></div><div><strong id="minutes">00</strong><span>Menit</span></div><div><strong id="seconds">00</strong><span>Detik</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="galeri">
+      <div class="section-inner">
+        <div class="center">
+          <p class="eyebrow">Captured moments</p>
+          <h2 class="section-title">Galeri Kami</h2>
+          <p class="section-intro">Sepenggal kebahagiaan yang ingin kami bagikan bersama Anda.</p>
+        </div>
+        <div class="gallery-grid">
+          <img src="images/yani-deni-cover.jpg" alt="Yani dan Deni di hari istimewa" loading="lazy">
+          <img src="images/yani-deni-selfie.jpg" alt="Yani dan Deni berfoto bersama di malam hari" loading="lazy">
+          <img src="images/yani-deni-garden-1.jpg" alt="Yani dan Deni di taman, foto pertama" loading="lazy">
+          <img src="images/yani-deni-garden-2.jpg" alt="Yani dan Deni di taman, foto kedua" loading="lazy">
+          <img src="images/yani-deni-garden-3.jpg" alt="Yani dan Deni di taman, foto ketiga" loading="lazy">
+          <img src="images/yani-deni-garden-4.jpg" alt="Yani dan Deni di taman, foto keempat" loading="lazy">
+          <img src="images/yani-deni-picnic.jpg" alt="Momen piknik Yani dan Deni" loading="lazy">
+          <img src="images/yani-deni-picnic-selfie.jpg" alt="Selfie Yani dan Deni saat piknik" loading="lazy">
+          <img src="images/yani-deni-closeup.jpg" alt="Potret dekat Yani dan Deni di alam terbuka" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section wedding-gift" id="gift">
+      <div class="section-inner">
+        <div class="center">
+          <p class="eyebrow">A little gift</p>
+          <h2 class="section-title">Wedding Gift</h2>
+          <p class="section-intro">Doa dan kehadiran Anda adalah hadiah terindah bagi kami. Jika ingin berbagi tanda kasih, dapat melalui rekening berikut.</p>
+        </div>
+        <div class="gift-card">
+          <p class="bank-label">Transfer Bank</p>
+          <h3 id="bank-name">BCA</h3>
+          <p class="account-number" id="account-number">3040375812</p>
+          <p class="account-holder" id="account-holder">a.n. Deni Aryanto</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section guestbook" id="ucapan">
+      <div class="section-inner">
+        <div class="center">
+          <p class="eyebrow">A note for the couple</p>
+          <h2 class="section-title">Ucapan & Doa</h2>
+          <p class="section-intro">Tinggalkan ucapan dan doa untuk Yani & Deni.</p>
+        </div>
+        <form class="guestbook-form" id="guestbook-form">
+          <div class="form-grid">
+            <div class="field full"><label for="guestbook-name">Nama pengirim</label><input id="guestbook-name" name="nama" placeholder="Nama lengkap" required maxlength="80"></div>
+            <div class="field full"><label for="guestbook-message">Ucapan & doa</label><textarea id="guestbook-message" name="pesan" placeholder="Tuliskan ucapan terbaik untuk kami…" required maxlength="1000"></textarea></div>
+          </div>
+          <button class="btn" type="submit">Kirim Ucapan ↗</button>
+          <p class="form-note" id="guestbook-note">Kolom ucapan akan tampil setelah database bersama disambungkan.</p>
+        </form>
+        <div class="message-list" id="message-list" aria-live="polite" aria-label="Daftar ucapan"></div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div>
+        <p class="eyebrow">Terima kasih</p>
+        <h2 class="script">Sampai jumpa di hari bahagia kami</h2>
+        <p>Merupakan kebahagiaan bagi kami untuk berbagi hari istimewa ini bersama orang-orang terkasih. Terima kasih atas doa dan restunya.</p>
+        <div class="divider">✳</div>
+        <p class="script" style="font-size:40px">Yani & Deni</p>
+      </div>
+    </section>
+  </main>
+  <footer hidden><span class="script">Yani & Deni</span><br>Dibuat dengan penuh cinta · 13 Mei 2027</footer>
+
+  <div class="starfield" id="starfield" aria-hidden="true" hidden></div>
+
+  <div class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Pratinjau foto">
+    <button class="lightbox-close" aria-label="Tutup foto">×</button><img src="" alt="">
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+    import { getDatabase, limitToLast, onValue, orderByChild, push, query, ref } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+    // Nama tamu dapat dikirim lewat URL, misalnya ?to=Keluarga%20Bapak%20Budi.
+    const guestName = new URLSearchParams(window.location.search).get("to")?.trim();
+    if (guestName) document.getElementById("guest-name").textContent = guestName;
+
+    document.body.classList.add("is-locked");
+    const cover = document.querySelector(".cover");
+    const videoScreen = document.getElementById("video-screen");
+    const invitationVideo = document.getElementById("invitation-video");
+    const enterButton = document.getElementById("enter-invitation");
+    const videoStatus = document.getElementById("video-status");
+    const invitationSections = [document.querySelector(".nav"), document.querySelector("main"), document.querySelector("footer")];
+    const starfield = document.getElementById("starfield");
+    const showInvitationContent = async () => {
+      try {
+        if (document.fullscreenElement) await document.exitFullscreen();
+        else if (invitationVideo.webkitDisplayingFullscreen) invitationVideo.webkitExitFullscreen();
+      } catch {}
+      videoScreen.hidden = true;
+      invitationSections.forEach(section => { section.hidden = false; });
+      starfield.hidden = false;
+      document.body.classList.remove("is-locked");
+      window.scrollTo(0, 0);
+      document.getElementById("salam").scrollIntoView();
+    };
+    const starColors = ["#d9cbb6", "#c9a789", "#a7654f", "#9b9d7d"];
+    const starShapes = ["✦", "✧", "✧", "·"];
+    for (let i = 0; i < 34; i++) {
+      const star = document.createElement("span");
+      star.className = "star-particle";
+      star.textContent = starShapes[Math.floor(Math.random() * starShapes.length)];
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.fontSize = `${8 + Math.random() * 11}px`;
+      star.style.color = starColors[Math.floor(Math.random() * starColors.length)];
+      star.style.animationDuration = `${3 + Math.random() * 4}s`;
+      star.style.animationDelay = `${Math.random() * -7}s`;
+      starfield.appendChild(star);
+    }
+
+    document.getElementById("open-invitation").addEventListener("click", async () => {
+      cover.hidden = true;
+      videoScreen.hidden = false;
+      window.scrollTo(0, 0);
+      try {
+        const playPromise = invitationVideo.play();
+        if (window.matchMedia("(max-width: 700px)").matches && invitationVideo.requestFullscreen) {
+          invitationVideo.requestFullscreen().catch(() => {});
+        }
+        await playPromise;
+      } catch {
+        videoStatus.textContent = "Tekan tombol putar pada video untuk memulai. Di iPhone, video akan menggunakan pemutar layar penuh bawaan.";
+      }
+    });
+    invitationVideo.addEventListener("ended", () => {
+      showInvitationContent();
+    });
+    invitationVideo.addEventListener("error", () => {
+      videoStatus.textContent = "Video tidak dapat diputar. Periksa file video-undangan.mp4 di folder yang sama.";
+    });
+    enterButton.addEventListener("click", showInvitationContent);
+
+    // Ubah tanggal ini untuk menyesuaikan hitung mundur acara.
+    const weddingDate = new Date("2027-05-13T08:00:00+07:00").getTime();
+    function updateCountdown() {
+      const diff = weddingDate - Date.now();
+      const values = diff > 0 ? [Math.floor(diff / 86400000), Math.floor(diff / 3600000) % 24, Math.floor(diff / 60000) % 60, Math.floor(diff / 1000) % 60] : [0,0,0,0];
+      ["days","hours","minutes","seconds"].forEach((id, i) => document.getElementById(id).textContent = String(values[i]).padStart(2,"0"));
+    }
+    updateCountdown(); setInterval(updateCountdown, 1000);
+
+    const toggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    toggle.addEventListener("click", () => {
+      const opened = navLinks.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", opened);
+      toggle.textContent = opened ? "×" : "☰";
+    });
+    navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      navLinks.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); toggle.textContent = "☰";
+    }));
+
+    const lightbox = document.querySelector(".lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+    document.querySelectorAll(".gallery-grid img").forEach(img => img.addEventListener("click", () => {
+      lightboxImage.src = img.src; lightboxImage.alt = img.alt; lightbox.classList.add("open");
+    }));
+    function closeLightbox() { lightbox.classList.remove("open"); }
+    lightbox.querySelector("button").addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });
+
+    const guestbookForm = document.getElementById("guestbook-form");
+    const guestbookName = document.getElementById("guestbook-name");
+    const guestbookMessage = document.getElementById("guestbook-message");
+    const messageList = document.getElementById("message-list");
+    const guestbookNote = document.getElementById("guestbook-note");
+    const firebaseConfig = {
+      apiKey: "AIzaSyBe6T6cc_HLQfy19Hrm8nyiuSovluBJlB8",
+      authDomain: "undangan-nikahan-e5374.firebaseapp.com",
+      databaseURL: "https://undangan-nikahan-e5374-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "undangan-nikahan-e5374",
+      storageBucket: "undangan-nikahan-e5374.firebasestorage.app",
+      messagingSenderId: "1097326148727",
+      appId: "1:1097326148727:web:3193e07b6f8b9c5b335a72",
+      measurementId: "G-BM0MDFJ64J"
+    };
+    if (guestName) guestbookName.value = guestName;
+
+    function renderGreetings(greetings) {
+      messageList.replaceChildren();
+      if (greetings.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "empty-messages";
+        empty.textContent = "Belum ada ucapan. Jadilah yang pertama mengirim doa!";
+        messageList.appendChild(empty);
+        return;
+      }
+      greetings.forEach(greeting => {
+        const card = document.createElement("article");
+        card.className = "message-card";
+        const sender = document.createElement("h3");
+        sender.textContent = greeting.name;
+        const message = document.createElement("p");
+        message.textContent = greeting.message;
+        card.append(sender, message);
+        if (greeting.createdAt) {
+          const date = new Date(greeting.createdAt);
+          const time = document.createElement("time");
+          time.dateTime = date.toISOString();
+          time.textContent = new Intl.DateTimeFormat("id-ID", { dateStyle: "medium" }).format(date);
+          card.appendChild(time);
+        }
+        messageList.appendChild(card);
+      });
+    }
+
+    const database = getDatabase(initializeApp(firebaseConfig));
+    const greetingsRef = ref(database, "weddingGreetings");
+    const latestGreetings = query(greetingsRef, orderByChild("createdAt"), limitToLast(100));
+    onValue(latestGreetings, snapshot => {
+      const greetings = [];
+      snapshot.forEach(childSnapshot => greetings.push(childSnapshot.val()));
+      renderGreetings(greetings.reverse());
+      guestbookNote.textContent = "Ucapan tersimpan dan tampil untuk semua tamu.";
+    }, () => {
+      guestbookNote.textContent = "Ucapan belum dapat dimuat. Periksa Realtime Database dan aturan keamanannya.";
+    });
+
+    guestbookForm.addEventListener("submit", async event => {
+      event.preventDefault();
+      const greeting = {
+        name: guestbookName.value.trim(),
+        message: guestbookMessage.value.trim()
+      };
+      if (!greeting.name || !greeting.message) return;
+      const submitButton = guestbookForm.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      guestbookNote.textContent = "Mengirim ucapan…";
+      try {
+        await push(greetingsRef, { ...greeting, createdAt: Date.now() });
+        guestbookMessage.value = "";
+        guestbookNote.textContent = "Terima kasih! Ucapan Anda terkirim dan akan tampil untuk semua tamu.";
+        messageList.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      } catch {
+        guestbookNote.textContent = "Ucapan belum terkirim. Periksa koneksi dan aturan keamanan Realtime Database.";
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
